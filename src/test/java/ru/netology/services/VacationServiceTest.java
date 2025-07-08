@@ -1,20 +1,15 @@
 package ru.netology.services;
+import org.junit.jupiter.params.ParameterizedTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+class FreelancerServiceTest {
 
-public class VacationServiceTest {
-
-    @Test
+    @ParameterizedTest
     public void shouldCalcThreeVacationMonths(int expected, int income, int expenses, int threshold) {
         VacationService service = new VacationService();
+
         int result = service.calcVacationMonths(income, expenses, threshold);
 
-        Assertions.assertEquals(income, expenses, threshold);
-
-
-
-
-
+        assertEquals(expected, result);
     }
 }
